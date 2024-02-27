@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Exemplo2_aula.Models.Categoria>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Listagem de Categorias</h1>
+
+<p>
+    <a asp-action="Create">Inserir categoria</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoriaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoriaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new {  id=item.CategoriaId}) |
+                    @Html.ActionLink("Detalhes", "Details", new { id=item.CategoriaId }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id=item.CategoriaId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
