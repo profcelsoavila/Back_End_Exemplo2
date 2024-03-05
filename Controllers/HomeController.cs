@@ -1,8 +1,8 @@
-﻿using Exemplo2_aula.Models;
+﻿using Exemplo2.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Exemplo2_aula.Controllers
+namespace Exemplo2.Controllers
 {
     public class HomeController : Controller
     {
